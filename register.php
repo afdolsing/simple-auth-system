@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
-                Do you have account? <a href="login-form.php">Login</a>
+                Do you have account? <a href="login.php">Login</a>
             </div>
         </div>
         

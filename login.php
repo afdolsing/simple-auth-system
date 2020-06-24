@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
-                Do you have account? <a href="register.php">Sign Up</a>
+             Haven't account yet? <a href="register.php">Sign Up</a>
             </div>
         </div>
         
