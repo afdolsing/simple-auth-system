@@ -21,16 +21,16 @@ if(isset($_POST['register'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <title>Sign Up</title>
+    <title>Register</title>
 </head>
 <body>
-    <div class="container" style="margin-top: 50px">
+    <div class="container" style="margin-top: 100px">
         <div class="row">
             <div class="col-md-5 offset-md-3">
                 <div class="card">
                     <div class="card-header">
                         <form  method="POST">
-                            <label>Sign Up</label>
+                            <label><h4>Sign Up</h4></label>
                             <hr>
                     
                             <div class="form-group">

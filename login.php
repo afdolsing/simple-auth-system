@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <title>Sign Up</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="container" style="margin-top: 100px">
@@ -19,12 +19,12 @@
                     
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" name="username" placeholder="username" required>
+                                <input type="text" class="form-control" name="username" placeholder="admin" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password" placeholder="password" required>
+                                <input type="password" class="form-control" name="password" placeholder="123" required>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember" >
