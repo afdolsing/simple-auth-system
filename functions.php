@@ -28,7 +28,7 @@ function register($data){
     // cek konfirmasi password
     if( $password !== $password2){
         echo "<script>
-                alert('your password confirm is wrong!');
+                alert('doesn\'t match Password')
                 </script>";
         return false;     
     }

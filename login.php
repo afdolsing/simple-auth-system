@@ -55,10 +55,10 @@ if(isset($_POST['login'])){
 
            // cek remember me (cookie)
            if(isset($_POST['remember'])){
-               //buat cookie
-               setcookie('id', $row['id'], time() + 30);
+               //buat cookie selama 60 detik
+               setcookie('id', $row['id'], time() + 60);
                // hash username
-               setcookie('key', hash('sha256', $row['username']), time() + 30);
+               setcookie('key', hash('sha256', $row['username']), time() + 60);
            }
 
            header('location: index.php');
@@ -101,7 +101,7 @@ if(isset($_POST['login'])){
                             </div>
                             <div>
                                 <?php if(isset($error)): ?>
-                                        <p style="color: red;">wrong username or password!</p>
+                                        <p style="color: red;">Invalid email or password!</p>
                                 <?php endif; ?>
                             </div>
                             <div class="form-group">

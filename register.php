@@ -5,7 +5,7 @@ require('functions.php');
 if(isset($_POST['register'])){
     if(register($_POST) > 0){
         echo "<script>
-                alert('new user has added!');
+                alert('new user has added!')
                 </script>";
     } else {
         echo mysqli_error($conn);
@@ -26,7 +26,7 @@ if(isset($_POST['register'])){
 <body>
     <div class="container" style="margin-top: 100px">
         <div class="row">
-            <div class="col-md-5 offset-md-3">
+            <div class="col-md-4 offset-md-4">
                 <div class="card">
                     <div class="card-header">
                         <form action="" method="POST">
@@ -45,8 +45,8 @@ if(isset($_POST['register'])){
                             </div>
 
                             <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" class="form-control" name="password2" placeholder="confirm password">
+                                <label>Password confirmation</label>
+                                <input type="password" class="form-control" name="password2" placeholder="password confirmation" required>
                             </div>
                             
                             <button type="submit" name="register" class="btn btn-register btn-block btn-success">REGISTER</button>

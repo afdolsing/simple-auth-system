@@ -13,5 +13,6 @@ session_destroy();
 setcookie('id','', time() - 3600);
 setcookie('key','', time() - 3600);
 
+// redicect ke
 header("location: login.php");
 exit;
