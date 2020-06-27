@@ -33,7 +33,7 @@ function register($data){
         return false;     
     }
 
-    // enskripsi password
+    // enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
     
     // tambahkan userbaru ke database
