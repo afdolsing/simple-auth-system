@@ -19,7 +19,7 @@ if(isset($_POST['register'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <title>Register</title>
 </head>
@@ -36,6 +36,7 @@ if(isset($_POST['register'])){
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" name="username" placeholder="username" required>
+
                             </div>
 
                             <div class="form-group">

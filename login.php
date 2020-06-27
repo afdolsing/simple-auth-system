@@ -1,6 +1,35 @@
 <?php
-
+session_start();
 require('functions.php');
+
+
+// cek cookie
+if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
+    $id = $_COOKIE['id'];
+
+    $key = $_COOKIE['key'];
+
+    // ambil username berdasarkan id
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE
+            id = $id");
+
+    // row isinya hanya username
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if( $key === hash('sha256', $row['username'])){
+        // buat session
+        $_SESSION['login'] = true;
+    }
+
+}
+
+// jika sessiom sudah login kembalikan ke index
+if(isset($_SESSION['login'])){
+    header('location: index.php');
+    exit;
+}
+
 
 if(isset($_POST['login'])){
 
@@ -11,16 +40,28 @@ if(isset($_POST['login'])){
             username = '$username'");
 
     // cek username
-    /* mysqli_num_rows -> fungsi untuk menghitung ada brp baris yg dikembalikan dari database 'SELECT * FROM' 
+    /* Fungsi mysql_num_rows() digunakan untuk mengetahui berapa banyak jumlah baris hasil pemanggilan fungsi mysql_query()
         kalau ketemu pasti nilai satu, kalau tidak nilai 0
     */
     if (mysqli_num_rows($result) === 1){
 
         //cek password
+        // $row akan menyimpan data user yang login
         $row = mysqli_fetch_assoc($result);
         // mengecek string sama atau tidak dengan hash
        if( password_verify($password, $row['password'])){
-           header('Location: index.php');
+           //set session
+           $_SESSION['login'] = true;
+
+           // cek remember me (cookie)
+           if(isset($_POST['remember'])){
+               //buat cookie
+               setcookie('id', $row['id'], time() + 30);
+               // hash username
+               setcookie('key', hash('sha256', $row['username']), time() + 30);
+           }
+
+           header('location: index.php');
            exit;
        }
 
@@ -35,7 +76,7 @@ if(isset($_POST['login'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <title>Login</title>
 </head>
