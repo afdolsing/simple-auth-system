@@ -1,6 +1,6 @@
 <?php
 
-// Koneksikan conn ke database dengan mysqli atau PDO
+// Koneksikan ke database dengan mysqli atau PDO
 $conn = mysqli_connect("localhost", "root", "", "db_simple_auth") OR DIE ("Failed Connection");
 
 function register($data){
@@ -27,7 +27,7 @@ function register($data){
     // cek konfirmasi password
     if( $password !== $password2){
         echo "<script>
-                alert('password confirm is wrong!');
+                alert('your password confirm is wrong!');
                 </script>";
         return false;     
     }

@@ -29,7 +29,7 @@ if(isset($_POST['register'])){
             <div class="col-md-5 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <form  method="POST">
+                        <form action="" method="POST">
                             <label><h4>Sign Up</h4></label>
                             <hr>
                     
