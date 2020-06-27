@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 // set session menjadi kosong

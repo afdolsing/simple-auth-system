@@ -40,9 +40,5 @@ function register($data){
     mysqli_query($conn, "INSERT INTO user VALUES('','$username','$password')");
 
     return mysqli_affected_rows($conn);
-
 }
-
-
-
 ?>

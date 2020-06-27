@@ -1,5 +1,4 @@
 <?php
-
 require('functions.php');
 
 if(isset($_POST['register'])){
@@ -11,7 +10,6 @@ if(isset($_POST['register'])){
         echo mysqli_error($conn);
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,6 @@ if(isset($_POST['register'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
     <title>Register</title>
 </head>
 <body>
@@ -32,23 +29,18 @@ if(isset($_POST['register'])){
                         <form action="" method="POST">
                             <label><h4>Sign Up</h4></label>
                             <hr>
-                    
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" name="username" placeholder="username" required>
-
                             </div>
-
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" class="form-control" name="password" placeholder="password" required>
                             </div>
-
                             <div class="form-group">
                                 <label>Password confirmation</label>
                                 <input type="password" class="form-control" name="password2" placeholder="password confirmation" required>
                             </div>
-                            
                             <button type="submit" name="register" class="btn btn-register btn-block btn-success">REGISTER</button>
                         </form>
                 </div>
@@ -57,8 +49,6 @@ if(isset($_POST['register'])){
                 Do you have account already? <a href="login.php">Login</a>
             </div>
         </div>
-        
-    </div>
-    
+    </div>   
 </body>
 </html>

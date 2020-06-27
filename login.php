@@ -2,11 +2,9 @@
 session_start();
 require('functions.php');
 
-
 // cek cookie
 if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
     $id = $_COOKIE['id'];
-
     $key = $_COOKIE['key'];
 
     // ambil username berdasarkan id
@@ -21,7 +19,6 @@ if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
         // buat session
         $_SESSION['login'] = true;
     }
-
 }
 
 // jika sessiom sudah login kembalikan ke index
@@ -30,21 +27,16 @@ if(isset($_SESSION['login'])){
     exit;
 }
 
-
 if(isset($_POST['login'])){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE
-            username = '$username'");
-
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
     // cek username
     /* Fungsi mysql_num_rows() digunakan untuk mengetahui berapa banyak jumlah baris hasil pemanggilan fungsi mysql_query()
         kalau ketemu pasti nilai satu, kalau tidak nilai 0
     */
     if (mysqli_num_rows($result) === 1){
-
         //cek password
         // $row akan menyimpan data user yang login
         $row = mysqli_fetch_assoc($result);
@@ -60,17 +52,14 @@ if(isset($_POST['login'])){
                // hash username
                setcookie('key', hash('sha256', $row['username']), time() + 60);
            }
-
            header('location: index.php');
            exit;
        }
-
     }
-
     $error = true;
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,12 +78,10 @@ if(isset($_POST['login'])){
                         <form method="POST">
                             <label><h4>Sign In</h4></label>
                             <hr>
-                    
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" name="username" placeholder="admin" required>
                             </div>
-
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" class="form-control" name="password" placeholder="123" required>
@@ -107,19 +94,15 @@ if(isset($_POST['login'])){
                             <div class="form-group">
                                 <input type="checkbox" name="remember" >
                                 <label>Remember me</label>
-                            </div>
-                            
-                            
+                            </div>                                                      
                             <button type="submit" name="login" class="btn btn-register btn-block btn-success">LOGIN</button>
                         </form>
                 </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
-             Do you have no account yet? <a href="register.php">Sign Up</a>
+                Do you have no account yet? <a href="register.php">Sign Up</a>
             </div>
-        </div>
-        
-    </div>
-    
+        </div>     
+    </div>   
 </body>
 </html>
