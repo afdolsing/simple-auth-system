@@ -15,7 +15,6 @@ if(!isset($_SESSION['login'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
     <title>Index</title>
 </head>
 <body>
@@ -23,6 +22,5 @@ if(!isset($_SESSION['login'])){
         <h3>Login Success</h3>
         <a href="logout.php" class="btn btn-sm btn-danger">Log out</a>    
     </div>
-
 </body>
 </html>
